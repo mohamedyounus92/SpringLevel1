@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+">
+    <!--- Setter Injection example -->
+    <bean id="chairBean" class="diConcepts.Product">
+        <property name="productId" value="CH001"/>
+        <property name="productName" value="Plastic Green Chair"/>
+        <property name="productPrice" value="3500"/>  
+    </bean>
+    
+    <!--- Constructor Injection Example -->
+    <bean id="tableBean" class="diConcepts.Product">
+        <constructor-arg index="0" type="java.lang.String" value="TB001"/>
+        <constructor-arg index="1" value="Computer Table (White)"/>
+        <constructor-arg index="2" value="5200"/>
+    </bean>
+    
+    <!--- Setter Injection with REF attribute Example -->
+    <bean id="invoice001" class="diConcepts.Invoice">
+        <property name="invoiceId" value="invoice20181211"/>
+        <property name="products">
+            <set>
+                <ref bean="chairBean"/>
+                <ref bean="tableBean"/>
+            </set>
+        </property>
+    </bean>
+</beans>

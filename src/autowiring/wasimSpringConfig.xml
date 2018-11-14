@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+">
+    <bean id="address" class="autowiring.Address">
+        <property name="street" value="1000, Nanjappa nagar"/>
+        <property name="city" value="Erode"/>
+        <property name="pincode" value="600001"/>
+    </bean>
+    
+    <!--- Autowiring by byName Example-->
+    <bean id="employee002" class="autowiring.Employee" autowire="byName">
+        <property name="empName" value="Wasim"/>
+        <property name="empId" value="2018102"/>
+        <!--- No need to fill association for Address as it is taken care via autowiring byName
+              Here the property name is matched to the bean id-->
+    </bean>
+</beans>
