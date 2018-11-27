@@ -18,6 +18,7 @@
                 <config-file>src/diConcepts/SpringConfig.xml</config-file>
                 <config-file>src/autowiring/younusSpringConfig.xml</config-file>
                 <config-file>src/autowiring/wasimSpringConfig.xml</config-file>
+                <config-file>src/springHibernate/SpringConfig.xml</config-file>
             </config-files>
             <config-file-groups/>
         </spring-data>

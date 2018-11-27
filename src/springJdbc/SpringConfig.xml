@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+">
+    <bean name="studentBean" class="springJdbc.Student">
+        <property name="id" value="0"/>
+        <property name="name" value=""/>
+    </bean>
+    
+    <bean name="dataSourceBean" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:student"/>
+        <property name="username" value="SYSTEM"/>
+        <property name="password" value="password"/>
+    </bean>
+    
+    <bean name="springJdbcTemplateBean" class="springJdbc.StudentJdbcTemplate">
+        <property name="dataSource" ref="dataSourceBean"/>
+    </bean>
+</beans>
